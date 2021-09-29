@@ -22,7 +22,9 @@
     "last 3 safari versions",
     "last 3 edge versions"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "shex-methods": "^0.1.21"
+  },
   "description": "app to test shapes for solid",
   "repository": {
     "type": "git",
