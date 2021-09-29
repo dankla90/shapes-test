@@ -4162,7 +4162,7 @@ Object.defineProperty(Duplex.prototype, 'destroyed', {
     this._writableState.destroyed = value;
   }
 });
-},{"./_stream_readable":"node_modules/readable-stream/lib/_stream_readable.js","./_stream_writable":"node_modules/readable-stream/lib/_stream_writable.js","inherits":"node_modules/inherits/inherits_browser.js","process":"node_modules/process/browser.js"}],"node_modules/safe-buffer/index.js":[function(require,module,exports) {
+},{"./_stream_readable":"node_modules/readable-stream/lib/_stream_readable.js","./_stream_writable":"node_modules/readable-stream/lib/_stream_writable.js","inherits":"node_modules/inherits/inherits_browser.js","process":"node_modules/process/browser.js"}],"node_modules/string_decoder/node_modules/safe-buffer/index.js":[function(require,module,exports) {
 
 /*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
@@ -4528,7 +4528,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":"node_modules/safe-buffer/index.js"}],"node_modules/readable-stream/lib/internal/streams/end-of-stream.js":[function(require,module,exports) {
+},{"safe-buffer":"node_modules/string_decoder/node_modules/safe-buffer/index.js"}],"node_modules/readable-stream/lib/internal/streams/end-of-stream.js":[function(require,module,exports) {
 // Ported from https://github.com/mafintosh/end-of-stream with
 // permission from the author, Mathias Buus (@mafintosh).
 'use strict';
@@ -7488,7 +7488,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60181" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51213" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

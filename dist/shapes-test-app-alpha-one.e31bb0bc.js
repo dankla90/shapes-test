@@ -53700,7 +53700,8 @@ const NOT_ENTERED_WEBID = "...not logged in yet - but enter any WebID to read fr
 const session = new _solidClientAuthnBrowser.Session();
 const buttonLogin = document.getElementById("btnLogin");
 const writeForm = document.getElementById("writeForm");
-const readForm = document.getElementById("readForm"); // 1a. Start Login Process. Call session.login() function.
+const readForm = document.getElementById("readForm");
+const buttonShex = document.getElementById("ShexRead"); // 1a. Start Login Process. Call session.login() function.
 
 async function login() {
   if (!session.info.isLoggedIn) {
@@ -53813,6 +53814,25 @@ async function readProfile() {
   document.getElementById("labelFN").textContent = `[${formattedName}]`;
 }
 
+async function getShex() {
+  const webID = document.getElementById("webID").value;
+
+  if (webID === NOT_ENTERED_WEBID) {
+    document.getElementById("ShexName").textContent = `Login first, or enter a WebID (any WebID!) to read from its profile`;
+    return false;
+  }
+
+  try {
+    new URL(webID);
+  } catch (_) {
+    document.getElementById("ShexName").textContent = `Provided WebID [${webID}] is not a valid URL - please try again`;
+    return false;
+  }
+
+  const profileDocumentUrl = new URL(webID);
+  profileDocumentUrl.hash = "";
+}
+
 buttonLogin.onclick = function () {
   login();
 };
@@ -53821,6 +53841,11 @@ writeForm.addEventListener("submit", event => {
   event.preventDefault();
   writeProfile();
 });
+
+buttonShex.onclick = function () {
+  getShex();
+};
+
 readForm.addEventListener("submit", event => {
   event.preventDefault();
   readProfile();
@@ -53853,7 +53878,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60181" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51213" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
