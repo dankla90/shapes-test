@@ -8,6 +8,20 @@ import {
 } from "@inrupt/solid-client";
 import { Session } from "@inrupt/solid-client-authn-browser";
 import { VCARD } from "@inrupt/vocab-common-rdf";
+import { validateShapes } from '../validate';
+import { Shape } from "shex-methods";
+import {
+  chatShex,
+  ChatShape,
+  ChatShapeType,
+  ChatShapeContext,
+} from "../resources/shex";
+
+
+
+
+
+
 
 // If your Pod is *not* on `solidcommunity.net`, change this to your identity provider.
 const SOLID_IDENTITY_PROVIDER = "https://solidcommunity.net";
@@ -179,9 +193,10 @@ async function getShex() {
   const profileDocumentUrl = new URL(webID);
   profileDocumentUrl.hash = "";
 
+  // path to method
+  // node_modules\shex-methods\lib\handlers\findAll.d.ts 
 
 
-  
 
 }
 
