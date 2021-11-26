@@ -1,0 +1,95 @@
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tag:   <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <TagMeaningObject-GlobalContext> , <https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72> , 
+                <TagMeaning-TaggingContext> , <https://astrea.linkeddata.es/shapes#c44621bf5281764f4fbba64d16c2b739> , 
+                <TagURI> , <https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543> , 
+                <TagMeaning> , <TagMeaning-TaggingContext> , 
+                <TagMeaningURI-GlobalContext> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+  
+<TagMeaning>
+        a               sh:NodeShape ;
+        rdfs:label      "Tag Meaning" ;
+        sh:name         "Tag Meaning" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <TagMeaningURI-GlobalContext> , 
+                        <https://astrea.linkeddata.es/shapes#c44621bf5281764f4fbba64d16c2b739> , 
+                        <https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72> ;
+        sh:targetClass  <http://moat-project.org/ns#Meaning> .
+
+<https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      tag:name .
+
+<https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foaf:maker .
+
+<TagMeaning-TaggingContext>
+        a            sh:PropertyShape ;
+        rdfs:label   "<TagMeaning-TaggingContext>" ;
+        sh:class     rdfs:Resource ;
+        sh:name      "<TagMeaning-TaggingContext>" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://moat-project.org/ns#tagMeaning> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<TagURI>
+        a               sh:NodeShape ;
+        rdfs:label      "Tag URI" ;
+        sh:name         "Tag URI" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <TagMeaningObject-GlobalContext> , <https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543> ;
+        sh:targetClass  <http://moat-project.org/ns#Tag> .
+
+<TagMeaningURI-GlobalContext>
+        a            sh:PropertyShape ;
+        rdfs:label   "<TagMeaningURI-GlobalContext>" ;
+        sh:class     rdfs:Resource ;
+        sh:name      "<TagMeaningURI-GlobalContext>" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://moat-project.org/ns#meaningURI> .
+
+<https://astrea.linkeddata.es/shapes#c44621bf5281764f4fbba64d16c2b739>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <file:///usr/src/myapp/astrea/#meaningURI> .
+
+<TagMeaning-TaggingContext>
+        a               sh:NodeShape ;
+        sh:property     <TagMeaning-TaggingContext> ;
+        sh:targetClass  tag:RestrictedTagging .
+
+<TagMeaningObject-GlobalContext>
+        a            sh:PropertyShape ;
+        rdfs:label   "<TagMeaningObject-GlobalContext>" ;
+        sh:class     <http://moat-project.org/ns#Meaning> ;
+        sh:name      "<TagMeaningObject-GlobalContext>" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://moat-project.org/ns#hasMeaning> .
