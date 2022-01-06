@@ -12,9 +12,9 @@
 <http://astrea.linkeddata.es/report>
         a       <https://w3id.org/def/astrea#ShapeReport> ;
         <https://w3id.org/def/astrea#contains>
-                <TagMeaningObject-GlobalContext> , <https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72> , 
-                <TagMeaning-TaggingContext> , <https://astrea.linkeddata.es/shapes#c44621bf5281764f4fbba64d16c2b739> , 
-                <TagURI> , <https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543> , 
+                <TagMeaningObject-GlobalContext> , <TaggedBy> , 
+                <TagMeaning-TaggingContext> , <TagMeaning-LocalContext> , 
+                <TagURI> , <IRIOrLiteralName> , 
                 <TagMeaning> , <TagMeaning-TaggingContext> , 
                 <TagMeaningURI-GlobalContext> ;
         <https://w3id.org/def/astrea#generatedShapesFrom>
@@ -27,17 +27,17 @@
         sh:name         "Tag Meaning" ;
         sh:nodeKind     sh:IRI ;
         sh:property     <TagMeaningURI-GlobalContext> , 
-                        <https://astrea.linkeddata.es/shapes#c44621bf5281764f4fbba64d16c2b739> , 
-                        <https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72> ;
+                        <TagMeaning-LocalContext> , 
+                        <TaggedBy> ;
         sh:targetClass  <http://moat-project.org/ns#Meaning> .
 
-<https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543>
+<IRIOrLiteralName>
         a            sh:PropertyShape ;
         sh:maxCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      tag:name .
 
-<https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72>
+<TaggedBy>
         a            sh:PropertyShape ;
         sh:minCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral ;
@@ -63,7 +63,7 @@
         rdfs:label      "Tag URI" ;
         sh:name         "Tag URI" ;
         sh:nodeKind     sh:IRI ;
-        sh:property     <TagMeaningObject-GlobalContext> , <https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543> ;
+        sh:property     <TagMeaningObject-GlobalContext> , <IRIOrLiteralName> ;
         sh:targetClass  <http://moat-project.org/ns#Tag> .
 
 <TagMeaningURI-GlobalContext>
@@ -74,7 +74,7 @@
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://moat-project.org/ns#meaningURI> .
 
-<https://astrea.linkeddata.es/shapes#c44621bf5281764f4fbba64d16c2b739>
+<TagMeaning-LocalContext>
         a            sh:PropertyShape ;
         sh:maxCount  1 ;
         sh:minCount  1 ;
