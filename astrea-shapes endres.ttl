@@ -43,7 +43,7 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foaf:maker .
 
-<TagMeaning-TaggingContext>
+<TagMeaning-TaggingContext>  #jeg tror denne er tagging active 
         a            sh:PropertyShape ;
         rdfs:label   "<TagMeaning-TaggingContext>" ;
         sh:class     rdfs:Resource ;

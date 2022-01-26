@@ -1,0 +1,125 @@
+﻿<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:rd="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:n0="http://www.example.org/#"
+ xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+    <rdf:Description rdf:about="http://www.example.org/#">
+       <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#hasFather">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rd:domain rdf:resource="http://www.example.org/#Person"/>
+        <rd:range rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#birthDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#ssn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rd:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#Person">
+       <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#Alice">
+        <n0:hasFather rdf:resource="http://www.example.org/#Bob"/>
+        <n0:hasFather rdf:resource="http://www.example.org/#Robert"/>
+        <n0:ssn>987-65-432A</n0:ssn>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#Bob">
+        <n0:ssn>124-35-6789</n0:ssn>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#Calvin">
+        <n0:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1956-06-25T10:00:00+01:00</n0:birthDate>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/#Robert">
+        <n0:ssn>123-45-6789</n0:ssn>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#p">
+       <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#f1">
+       <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#f2">
+       <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#Imp">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body rdf:resource="#AtomList"/>
+        <swrl:head rdf:resource="#AtomList_5"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AtomList">
+        <rdf:first rdf:resource="#ClassAtom"/>
+        <rdf:rest rdf:resource="#AtomList_1"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ClassAtom">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+        <swrl:classPredicate rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AtomList_1">
+        <rdf:first rdf:resource="#ClassAtom_1"/>
+        <rdf:rest rdf:resource="#AtomList_2"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ClassAtom_1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+        <swrl:argument1 rdf:resource="urn:swrl#f1"/>
+        <swrl:classPredicate rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AtomList_2">
+        <rdf:first rdf:resource="#ClassAtom_2"/>
+        <rdf:rest rdf:resource="#AtomList_3"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#ClassAtom_2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+        <swrl:argument1 rdf:resource="urn:swrl#f2"/>
+        <swrl:classPredicate rdf:resource="http://www.example.org/#Person"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AtomList_3">
+        <rdf:first rdf:resource="#IndividualPropertyAtom"/>
+        <rdf:rest rdf:resource="#AtomList_4"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#IndividualPropertyAtom">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+        <swrl:argument2 rdf:resource="urn:swrl#f1"/>
+        <swrl:propertyPredicate rdf:resource="http://www.example.org/#hasFather"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AtomList_4">
+        <rdf:first rdf:resource="#IndividualPropertyAtom_1"/>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#IndividualPropertyAtom_1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+        <swrl:argument2 rdf:resource="urn:swrl#f2"/>
+        <swrl:propertyPredicate rdf:resource="http://www.example.org/#hasFather"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#AtomList_5">
+        <rdf:first rdf:resource="#SameIndividualAtom"/>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#SameIndividualAtom">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#SameIndividualAtom"/>
+        <swrl:argument1 rdf:resource="urn:swrl#f1"/>
+        <swrl:argument2 rdf:resource="urn:swrl#f2"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
