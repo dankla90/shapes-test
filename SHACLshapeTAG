@@ -1,0 +1,85 @@
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tag:   <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix ex:    <http://www.example.org/#> .
+
+
+  
+ex:TagMeaning
+        a sh:NodeShape ;
+        rdfs:label      "Tag Meaning" ;
+        sh:name         "Tag Meaning" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ex:Meaning ;
+        sh:property     [
+		sh:path ex:TagMeaningURI-GlobalContext ;
+                  sh:path ex:TagMeaning-LocalContext ;
+                  sh:path ex:TaggedBy ;
+		] ; 
+		.
+
+ex:IRIOrLiteralName
+        a sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      tag:name .
+
+ex:TaggedBy
+        a sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foaf:maker .
+
+ex:TagMeaning-TaggingContext  #jeg tror denne er tagging active 
+        a sh:PropertyShape ;
+        rdfs:label   "<TagMeaning-TaggingContext>" ;
+        sh:class     rdfs:Resource ;
+        sh:name      "<TagMeaning-TaggingContext>" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://moat-project.org/ns#tagMeaning> .
+
+
+ex:TagURI
+        a sh:NodeShape ;
+        rdfs:label      "Tag URI" ;
+        sh:name         "Tag URI" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <TagMeaningObject-GlobalContext> .
+ 
+ex:IRIOrLiteralName 
+        sh:targetClass  ex:Tag .
+
+ex:TagMeaningURI-GlobalContext
+        a sh:PropertyShape ;
+        rdfs:label   "<TagMeaningURI-GlobalContext>" ;
+        sh:class     rdfs:Resource ;
+        sh:name      "<TagMeaningURI-GlobalContext>" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://moat-project.org/ns#meaningURI> .
+
+<TagMeaning-LocalContext>
+        a sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <file:///usr/src/myapp/astrea/#meaningURI> .
+
+ex:TagMeaning-TaggingContext
+        a sh:NodeShape ;
+        sh:property     <TagMeaning-TaggingContext> ;
+        sh:targetClass  tag:RestrictedTagging .
+
+ex:TagMeaningObject-GlobalContext
+        a sh:PropertyShape ;
+        rdfs:label   "TagMeaningObject-GlobalContext" ;
+        sh:class     ex:Meaning ;
+        sh:name      "TagMeaningObject-GlobalContext" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      sh:meaning .
