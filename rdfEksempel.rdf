@@ -1,0 +1,7 @@
+<#Bookmark/https://www.youtube.com>
+    a schema:Bookmark;
+    schema:dateCreated "2/2/2022, 2:20:58 PM";
+    Thing:alternateName "youtube";
+    Thing:description "youtube";
+    Thing:disambiguationDescription <#Tag/Video>;
+    Thing:url "https://www.youtube.com".

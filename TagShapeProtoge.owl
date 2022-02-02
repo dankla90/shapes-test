@@ -42,11 +42,17 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/bassb/ontologies/2022/0/untitled-ontology-8#GeoCity
+:GeoCity rdf:type owl:NamedIndividual ,
+                  :Meaning .
+
+
 ###  http://www.semanticweb.org/bassb/ontologies/2022/0/untitled-ontology-8#Paris
 :Paris rdf:type owl:NamedIndividual ,
                 :Meaning ;
        :TagMeaning-LocalContext "geocity" ;
-       :TaggedBy "Daniel" .
+       :TaggedBy "Daniel" ,
+                 "robert" .
 
 
 ###  http://www.semanticweb.org/bassb/ontologies/2022/0/untitled-ontology-8#geolocation

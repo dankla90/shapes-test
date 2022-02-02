@@ -22,6 +22,7 @@ ex:TagMeaning
 		sh:path ex:TagMeaningURI-GlobalContext ;
                   sh:path ex:TagMeaning-LocalContext ;
                   sh:path ex:TaggedBy ;
+		sh:maxCount 1;
 		] ; 
 		.
 
@@ -82,4 +83,5 @@ ex:TagMeaningObject-GlobalContext
         sh:class     ex:Meaning ;
         sh:name      "TagMeaningObject-GlobalContext" ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      sh:meaning .
+        sh:path      sh:meaning ;
+	.
