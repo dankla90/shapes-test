@@ -1,0 +1,67 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex:    <http://www.example.org/#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+
+ex:BookmarkShape
+    a sh:NodeShape ;
+    sh:targetClass ex:Bookmark ; 		    # Applies to all persons
+    sh:property [                		    # _:b0
+        sh:path ex:hasURL ;      		    # constrains the values of ex:hasURL
+        sh:minCount 1 ;
+        sh:maxCount 1 ; 
+    ] ;
+    sh:property [        	 	          	# _:b1
+        sh:path ex:hasURL ; 	            # constrains the values of ex:hasURL
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [                	    	# _:b0
+        sh:path ex:dateCreated ;         	# constrains the values of ex:dateCreated
+        sh:minCount 1 ;
+        sh:maxCount 1 ; 
+    ] ;
+    sh:property [              		        # _:b1
+        sh:path ex:dateCreated ;         	# constrains the values of ex:dateCreated
+        sh:datatype xsd:dateTime ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [               		    # _:b0
+        sh:path ex:hasDescription ;         # constrains the values of ex:hasDescription
+        sh:minCount 1 ;
+        sh:maxCount 1 ; 
+    ] ;
+    sh:property [               	        # _:b1
+        sh:path ex:hasDescription ;         # constrains the values of ex:hasDescription
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [               		    # _:b0
+        sh:path ex:TagString ;          	# constrains the values of ex:TagString
+    ] ;
+    sh:property [               	        # _:b1
+        sh:path ex:TagString ;        		# constrains the values of ex:TagString
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [                		    # _:b0
+        sh:path ex:title ;                  # constrains the values of ex:title
+        sh:minCount 1 ;
+        sh:maxCount 1 ; 
+    ] ;
+    sh:property [               	        # _:b1
+        sh:path ex:title ;                  # constrains the values of ex:title
+        sh:datatype xsd:string ;
+        sh:severity sh:Warning ;
+    ] ;
+
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type owl:topDataProperty owl:topObjectProperty ) ;
+    .
+ ###### add SHACL vocabulary ###### 
+
+
+
+

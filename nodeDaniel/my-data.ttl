@@ -1,0 +1,69 @@
+@prefix : <#>.
+@prefix schema: <http://schema.org/>.
+@prefix lexit: <./>.
+@prefix www: <http://www.schema.org/>.
+@prefix Thing: <http://schema.org/Thing/>.
+
+lexit:bookmarks
+    a schema:Dataset;
+    www:Contains
+        <#Bookmark/https://ba.no>, <#Bookmark/https://bt.no>,
+        <#Bookmark/https://next-episode.net/the-boys>,
+        <#Bookmark/https://next-episode.net/the-walking-dead>,
+        <#Bookmark/https://tv2.no>.
+<#Bookmark/https://ba.no>
+    a schema:Bookmark;
+    schema:dateCreated "1/31/2022, 9:15:54 AM";
+    Thing:alternateName "Bergens Avisen";
+    Thing:description "Local newspaper from Bergen", "Loc newspaper from Bergen";
+    Thing:disambiguationDescription
+    <#Tag/Bergen>, <#Tag/Local-newspaper>, <#Tag/News>;
+    Thing:url "https://ba.no".
+<#Bookmark/https://bt.no>
+    a schema:Bookmark;
+    schema:dateCreated "1/31/2022, 9:15:19 AM";
+    Thing:alternateName "Bergens Tidende";
+    Thing:description "Another local newspaper from Bergen";
+    Thing:disambiguationDescription <#Tag/Bergen>, <#Tag/News>, <#Tag/Norway>;
+    Thing:url "https://bt.no".
+<#Bookmark/https://next-episode.net/the-boys>
+    a schema:Bookmark;
+    schema:dateCreated "1/31/2022, 9:18:11 AM";
+    schema:dateModified "1/31/2022, 9:19:06 AM";
+    Thing:alternateName "next episode tracker - The boys";
+    Thing:description "online series episode tracker";
+    Thing:disambiguationDescription
+    <#Tag/Episodes>, <#Tag/Next-episode>, <#Tag/Series>, <#Tag/Tracker>;
+    Thing:url "https://next-episode.net/the-boys".
+<#Bookmark/https://next-episode.net/the-walking-dead>
+    a schema:Bookmark;
+    schema:dateCreated "1/31/2022, 9:19:32 AM";
+    schema:dateModified "1/31/2022, 10:25:01 AM";
+    Thing:alternateName "next episode tracker - the walking deadasd";
+    Thing:description "";
+    Thing:disambiguationDescription
+    <#Tag/Next-episode>, <#Tag/Series>, <#Tag/Tracker>;
+    Thing:url "https://next-episode.net/the-walking-dead".
+<#Bookmark/https://tv2.no>
+    a schema:Bookmark;
+    schema:dateCreated "1/31/2022, 9:16:38 AM";
+    Thing:alternateName "TV2 News";
+    Thing:description "News from Norway";
+    Thing:disambiguationDescription <#Tag/News>, <#Tag/Norway>;
+    Thing:url "https://tv2.no".
+<#Tag/Bergen> a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "Bergen".
+
+<#Tag/Episodes> a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "Episodes".
+
+<#Tag/Local-newspaper>
+a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "Local-newspaper".
+<#Tag/News> a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "News".
+
+<#Tag/Next-episode>
+a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "Next-episode".
+<#Tag/Norway> a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "Norway".
+
+<#Tag/Series> a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "Series".
+
+<#Tag/Tracker> a schema:Tag; Thing:Meaning "wordnet"; Thing:Word "Tracker".
+
