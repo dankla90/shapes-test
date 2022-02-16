@@ -4,55 +4,61 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix ex:    <http://www.example.org/#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix : <#>.
+@prefix schema: <http://schema.org/>.
+@prefix lexit: <./>.
+@prefix www: <http://www.schema.org/>.
+@prefix Thing: <http://schema.org/Thing/>.
+
 
 ex:BookmarkShape
     a sh:NodeShape ;
     sh:targetClass ex:Bookmark ; 			# Applies to all Bookmarks
     sh:property [                			# _:b0
-        sh:path ex:URL ;      			    # constrains the values of ex:hasURL
+        sh:path Thing:URL ;      			    # constrains the values of ex:hasURL
         sh:minCount 1 ;
         sh:maxCount 1 ; 
     ] ;
     sh:property [        	 	  		    # _:b1
-        sh:path ex:URL ; 	         		# constrains the values of ex:hasURL
+        sh:path Thing:URL ; 	         		# constrains the values of ex:hasURL
         sh:datatype xsd:string ;
         sh:severity sh:Warning ;
     ] ;
     sh:property [                			# _:b0
-        sh:path ex:dateCreated ;      		# constrains the values of ex:dateCreated
+        sh:path schema:dateCreated ;      		# constrains the values of ex:dateCreated
         sh:minCount 1 ;
         sh:maxCount 1 ; 
     ] ;
     sh:property [              			    # _:b1
-        sh:path ex:dateCreated ;       		# constrains the values of ex:dateCreated
+        sh:path schema:dateCreated ;       		# constrains the values of ex:dateCreated
         sh:datatype xsd:dateTime ;
         sh:severity sh:Warning ;
     ] ;
     sh:property [               			# _:b0
-        sh:path ex:Description ;          	# constrains the values of ex:hasDescription
+        sh:path Thing:description ;          	# constrains the values of ex:hasDescription
         sh:minCount 1 ;
         sh:maxCount 1 ; 
     ] ;
     sh:property [               	        # _:b1
-        sh:path ex:Description ;          	# constrains the values of ex:hasDescription
+        sh:path Thing:description ;          	# constrains the values of ex:hasDescription
         sh:datatype xsd:string ;
         sh:severity sh:Warning ;
     ] ;
     sh:property [               			        # _:b0
-        sh:path ex:alternateName ;          		# constrains the values of ex:title
+        sh:path Thing:alternateName ;          		# constrains the values of ex:title
         sh:minCount 1 ;
         sh:maxCount 1 ; 
     ] ; 
     sh:property [               	                 # _:b1
-        sh:path ex:alternateName ;                   # constrains the values of ex:title
+        sh:path Thing:alternateName ;                   # constrains the values of ex:title
         sh:datatype xsd:string ;
         sh:severity sh:Warning ;
     ] ;
     sh:property [               			          # _:b0
-        sh:path ex:disambiguationDescription ;        # constrains the values of ex:TagString
+        sh:path Thing:disambiguationDescription ;        # constrains the values of ex:TagString
     ] ;
     sh:property [               	         	      # _:b1
-        sh:path ex:disambiguationDescription ;        # constrains the values of ex:TagString
+        sh:path Thing:disambiguationDescription ;        # constrains the values of ex:TagString
         sh:objecttype xsd:Tag ;
         sh:severity sh:Warning ;
     ] ;

@@ -3,6 +3,16 @@
 @prefix lexit: <./>.
 @prefix www: <http://www.schema.org/>.
 @prefix Thing: <http://schema.org/Thing/>.
+@prefix : <http://www.example.org/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.example.org/#> .
+
+###  http://www.example.org/#Bookmark
+#### <Bookmark> rdf:type owl:Class .
 
 lexit:bookmarks
     a schema:Dataset;
@@ -12,13 +22,13 @@ lexit:bookmarks
         <#Bookmark/https://next-episode.net/the-walking-dead>,
         <#Bookmark/https://tv2.no>.
 <#Bookmark/https://ba.no>
-    a schema:Bookmark;
-    schema:dateCreated "1/31/2022, 9:15:54 AM";
+    a schema:Bookmark, :Bookmark;
+    schema:dateCreated "2001-10-26T21:32:52+02:00"^^xsd:dateTime; ###"1/31/2022, 9:15:54 AM";
     Thing:alternateName "Bergens Avisen";
-    Thing:description "Local newspaper from Bergen", "Loc newspaper from Bergen";
+    Thing:description "Local newspaper from Bergen";
     Thing:disambiguationDescription
     <#Tag/Bergen>, <#Tag/Local-newspaper>, <#Tag/News>;
-    Thing:url "https://ba.no".
+    Thing:URL "https://ba.no".
 <#Bookmark/https://bt.no>
     a schema:Bookmark;
     schema:dateCreated "1/31/2022, 9:15:19 AM";

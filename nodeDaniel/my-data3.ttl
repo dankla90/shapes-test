@@ -5,6 +5,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.example.org/#> .
+@prefix : <#>.
+@prefix schema: <http://schema.org/>.
+@prefix lexit: <./>.
+@prefix www: <http://www.schema.org/>.
+@prefix Thing: <http://schema.org/Thing/>.
 
 <http://www.example.org/#> rdf:type owl:Ontology .
 
@@ -78,6 +83,15 @@
 :searchengine rdf:type owl:NamedIndividual ,
                        :Tag .
 
+
+<#Bookmark/https://ba.no>
+    a schema:Bookmark, :Bookmark;
+    :dateCreated "2001-10-26T21:32:52+02:00"^^xsd:dateTime;
+    :alternateName "Bergens Avisen";
+    :Description "Local newspaper from Bergen";
+    :disambiguationDescription
+    <#Tag/Bergen>, <#Tag/Local-newspaper>, <#Tag/News>;
+    :URL "https://ba.no".
 
 ###  http://www.example.org/#streaming
 :streaming rdf:type owl:NamedIndividual ,
