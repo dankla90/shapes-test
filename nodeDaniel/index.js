@@ -1,12 +1,21 @@
-import fs from 'fs'
+import fs from 'fs';
 import rdf from 'rdf-ext';
-import ParserN3 from '@rdfjs/parser-n3'
-import SHACLValidator from 'rdf-validate-shacl'
+import ParserN3 from '@rdfjs/parser-n3';
+import SHACLValidator from 'rdf-validate-shacl';
 import { SolidNodeClient } from 'solid-node-client';
-
-
-import $rdf from 'rdflib'
+import $rdf from 'rdflib';
 import {getSolidDataset} from '@inrupt/solid-client'
+import mlspotlight from 'dbpedia-spotlight';
+
+
+
+
+  // FUNTION FOR DBPEDIA SPOTLIGHT, WILL TEST TEXT FOR ANNOTATABLE DATA WHEN WORKING
+  const input = "Detter er en test for om det er norsk";
+  //const mlspotlight = mlspotlight();
+  mlspotlight.annotate(input,function(output){
+    console.log(output);
+  })
 
 
 async function loadFromPod(path) {
@@ -64,5 +73,8 @@ async function main() {
   // Validation report as RDF dataset
   console.log(report.dataset)
 }
+
+
+
 
 main();
