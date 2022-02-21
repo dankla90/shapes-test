@@ -7,11 +7,23 @@ import $rdf from 'rdflib';
 import {getSolidDataset} from '@inrupt/solid-client'
 import mlspotlight from 'dbpedia-spotlight';
 
-
-
+  // config for endponts idk if needed
+  mlspotlight.configEndpoints(
+    {
+      "english": {
+      protocol:'https:',
+      auth:'testuser:password123',
+      host:'context.aksw.org',
+      path:'/spotlight/english',
+      port:'8080',
+      confidence:0.5,
+      support:0
+      },
+    }
+  );
 
   // FUNTION FOR DBPEDIA SPOTLIGHT, WILL TEST TEXT FOR ANNOTATABLE DATA WHEN WORKING
-  const input = "Detter er en test for om det er norsk";
+  const input = "https://en.visitbergen.com"; //https://en.visitbergen.com
   //const mlspotlight = mlspotlight();
   mlspotlight.annotate(input,function(output){
     console.log(output);

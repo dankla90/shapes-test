@@ -2,7 +2,7 @@
   "dependencies": {
     "@inrupt/solid-client": "^1.19.0",
     "@rdfjs/parser-n3": "^1.1.4",
-    "dbpedia-spotlight": "^0.5.28",
+    "dbpedia-spotlight": "^0.5.27",
     "rdf-ext": "^2.0.1",
     "rdf-validate-shacl": "^0.4.2",
     "rdflib": "^2.2.17",
