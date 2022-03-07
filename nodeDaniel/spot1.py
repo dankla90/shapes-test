@@ -31,7 +31,7 @@ params = "my test text about Bergen city in Norway, confidence=0.5, support=20"
 
  
 
-annotations = spotlight.annotate('https://api.dbpedia-spotlight.org/en/annotate','Test about Bergen',confidence=0.4,
+annotations = spotlight.annotate('https://api.dbpedia-spotlight.org/en/annotate',textcontent,confidence=0.4,
 
 support=20)
 ## TESTING
