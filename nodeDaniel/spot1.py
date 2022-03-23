@@ -1,9 +1,5 @@
-from distutils.log import debug
-import matplotlib.pyplot
-from pyparsing import null_debug_action
 import requests
 import bs4
-import rdflib
 import spotlight 
 
 
@@ -37,10 +33,17 @@ try:
     
     ## ANNOTATION OF THE TEXT
     annotations = spotlight.annotate('https://api.dbpedia-spotlight.org/en/annotate',
-                                 txtcontent,confidence=0.9,support=20)
+                                 txtcontent,confidence=0.9,support=40)
     
-    print(annotations)
-    
+
+    annotationsUpdated = []
+    for dict_item in annotations:
+            item = (dict_item['URI'])
+            annotationsUpdated.append(item)
+
+    annotationsUpdated = list(dict.fromkeys(annotationsUpdated))
+    ## print(annotations)
+    print(annotationsUpdated)
+
 except:
     print("Oops! An error has occurred or maybe you just entered an Invalid URL :D")
-
