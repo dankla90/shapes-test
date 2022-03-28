@@ -1,7 +1,11 @@
 import requests
 import bs4
-import spotlight 
+import spotlight ## NPM i PYSPOTLIGHT
 import sys
+
+
+## ADDITIONAL REQUIREMENTS ARE: LMXL
+
 
 def main():
     ## TAKES INPUT
